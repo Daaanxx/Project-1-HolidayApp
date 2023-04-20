@@ -1,0 +1,25 @@
+/* .carousel-img {
+  background: cover;
+} */
+
+body {
+  background-color: rgb(54, 54, 54);
+}
+
+.carousel-item {
+  height: 500px;
+  margin-top: 30px;
+}
+
+/* .img-car {
+  max-width: 100%;
+} */
+
+.img-fill-container {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  /* object-fit: contain; */
+}
