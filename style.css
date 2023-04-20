@@ -4,6 +4,7 @@
 
 body {
   background-color: rgb(54, 54, 54);
+  margin-bottom: 100px;
 }
 
 .carousel-item {
@@ -45,4 +46,19 @@ body {
   grid-column-end: 5; 
   grid-row-start: row1-start 
   grid-row-end: 3; 
+}
+/* Cards with results */
+.card-deck {
+  margin: 0 auto;
+  display: flex;
+  
+}
+.card {
+  background-color: aquamarine;
+}
+.card-body{
+  text-align: center;
+}
+.card-img-top {
+  justify-content: center;
 }
