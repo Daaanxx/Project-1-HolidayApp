@@ -33,3 +33,16 @@ body {
   font-size: 1.5rem;
   color: #ebebeb;
 }
+
+/*Search country bar*/
+
+.container{
+  grid-template-columns: 40px 50px auto 50px 40px; 
+  grid-template-rows: 25% 100px auto;
+}
+.input-group {
+  grid-column-start: 2; 
+  grid-column-end: 5; 
+  grid-row-start: row1-start 
+  grid-row-end: 3; 
+}
