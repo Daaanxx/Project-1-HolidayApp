@@ -40,20 +40,35 @@ $.ajax(settings).done(function (response) {
 //     console.error(error);
 //   });
 
-$(document).ready(function){
-  // Activate Carousel
-  $("#myCarousel").carousel();
+// $(document).ready(function){
+//   // Activate Carousel
+//   $("#myCarousel").carousel();
 
-  // Enable Carousel Indicators
-  $(".item1").click(function(){
-    $("#myCarousel").carousel(0);
-  });
-  $(".item2").click(function(){
-    $("#myCarousel").carousel(1);
-  });
-  $(".item3").click(function(){
-    $("#myCarousel").carousel(2);
-  });
-  $(".item4").click(function(){
-    $("#myCarousel").carousel(3);
-  })};
+//   // Enable Carousel Indicators
+//   $(".item1").click(function(){
+//     $("#myCarousel").carousel(0);
+//   });
+//   $(".item2").click(function(){
+//     $("#myCarousel").carousel(1);
+//   });
+//   $(".item3").click(function(){
+//     $("#myCarousel").carousel(2);
+//   });
+//   $(".item4").click(function(){
+//     $("#myCarousel").carousel(3);
+//   })};
+
+$(document).ready(function () {
+  const carouselItems = $(".carousel-item");
+  let currentItem = 0;
+
+  // Function to move to the next slide
+  function moveToNextSlide() {
+    carouselItems.eq(currentItem).removeClass("active");
+    currentItem = (currentItem + 1) % carouselItems.length;
+    carouselItems.eq(currentItem).addClass("active");
+  }
+
+  // Set an interval to move to the next slide every 3 seconds (3000 milliseconds)
+  setInterval(moveToNextSlide, 8000);
+});
