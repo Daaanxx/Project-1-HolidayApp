@@ -19,7 +19,17 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background-repeat: no-repeat;
-  position: relative;
+
+  /* background-repeat: no-repeat; */
+  /* position: relative; */
   /* object-fit: contain; */
+}
+.carousel-text-main {
+  font-size: 3rem;
+  color: #ebebeb;
+}
+
+.carousel-text {
+  font-size: 1.5rem;
+  color: #ebebeb;
 }
