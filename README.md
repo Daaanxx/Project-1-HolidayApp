@@ -28,8 +28,9 @@ COVID API: https://rapidapi.com/api-sports/api/covid-193/details
 Daniel Kopacz: https://github.com/Daaanxx/
 Fatma Keskin: https://github.com/milkibeka
 Karla Fuentes Guerrero: https://github.com/KarlaFuGue
-
+# Links
 Repo: https://github.com/Daaanxx/Project-1-HolidayApp.git
+Deployed page: https://daaanxx.github.io/Project-1-HolidayApp/
 
 
 # License
