@@ -13,7 +13,7 @@
     />
     <!-- CSS file -->
     <link rel="stylesheet" href="style.css" />
-    <title>HolidayApp</title>
+    <title>HolidayAppLOCAL</title>
   </head>
   <body>
     <div
@@ -73,9 +73,9 @@
           <div class="input-group">
         <div class="input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text">Destination Country</span>
+            <span class="input-group-text" >Destination Country</span>
           </div>
-          <textarea class="form-control" aria-label="With textarea"></textarea>
+          <textarea class="form-control" id="input-text-destination" aria-label="With textarea" placeholder="eg. UK"></textarea>
         </div>
       </div>
       <!--I have currency-->
@@ -108,7 +108,7 @@
                       <a class="dropdown-item" href="#">USD: United States Dollar</a>
                       <a class="dropdown-item" href="#">ZAR: South African Rand</a>
                   </div>
-                  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                  <input type="text" class="form-control" id="input-currency-from" aria-label="Text input with dropdown button" placeholder="eg.GBP">
                 </div>
               </div>
       <!--I want currency -->        
@@ -135,7 +135,7 @@
                       <a class="dropdown-item" href="#">USD: United States Dollar</a>
                       <a class="dropdown-item" href="#">ZAR: South African Rand</a>
                   </div>
-                  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                  <input type="text" class="form-control" id="input-currency-to" aria-label="Text input with dropdown button" placeholder="eg.EUR">
                 </div>
               </div>
             </div>
@@ -153,13 +153,13 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroup-sizing-sm">Amount</span>
         </div>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <input type="text" class="form-control" id="input-budget" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="eg.3000">
       </div>
       </div>
       
       <!-- Button SEARCH  -->
 
-      <button type="button" class="btn btn-primary btn-lg">Large button</button>
+      <button type="button" class="btn btn-primary btn-lg" id="button-results">Check with us!</button>
 
       <!-- Cards with results -->
     <div class="card-deck">
@@ -167,7 +167,7 @@
         <img src="PageLayout.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Your budged in local currency </h5>
-          <p class="card-text"><span>$</span>5000</p>
+          <p class="card-text" id="local-curency"><span>$</span>5000</p>
           
         </div>
       </div>
@@ -176,7 +176,7 @@
         <img src="PageLayout.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Covid-19 info </h5>
-          <p class="card-text">5100 active cases</p>
+          <p class="card-text" id="active-cases">5100 active cases</p>
           
         </div>
       </div>
