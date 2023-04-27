@@ -14,6 +14,31 @@ $(document).ready(function () {
   setInterval(moveToNextSlide, 8000);
 });
 
+/* //RECENT SEARCHES
+ var searchHistory =[];
+ function getItems() {
+    var shearchedCountries = JSON.parse(localStorage.getItem("searchHistory"));
+    if (searchedCountries != null) {
+        searchHistory = searchedCountries;
+};
+
+// country list
+    for (I= 0; 1< searchHistory.lenght; i++) {
+      if (1 == 3) {
+          break;
+        }
+
+// Bootstrap list https://getbootstrap.com/docs/4.0/components/list-group/
+    listButton = $("<a>").attr({
+        class:"list-group-item list-group-item-action",
+        href:"#"
+      });
+      //append search history
+      listButton.text(searchHistory[i]);
+      $(".list-group").append(listButton);
+    }
+}; */
+
 //CALL FUNCTION
 $(document).ready(function () {
   // add an event listener (executeSearch) to the form
