@@ -27,10 +27,8 @@ var pat,
 function formatSearchResults(jsonResults) {
   var jsonObject = jsonResults;
 
-  //var siteCount = 0;
-
   $("#search-results-heading");
-  var formatedText = "";
+  var loggedText = "";
 
   jsonObject.Countries.forEach(function (item, index) {
     //console.log("hello"+data);
@@ -38,23 +36,19 @@ function formatSearchResults(jsonResults) {
     if (item.Country.toLowerCase() == pat.toLowerCase()) {
       var thumbnail = item.NewConfirmed;
 
-      //const href = item.href;
-
-      //formatedText += "<div class='dish-image-div'><a " + " href='" + href + "' target='_blank'><img class='dish-image' width='80' src='" + thumbnail + "' alt='recipe picture, link to recipe page'></a></div>";
-      //formatedText += "<div " + "class='dish-title-div'><a href='" + href + "' target='_blank'>" + item.title + "</a></div>";
-      formatedText +=
+      loggedText +=
         "<div class='called-details-div'><h5>History Cases: " +
         item.TotalConfirmed +
         "<h5></div>";
-      formatedText +=
+        loggedText +=
         "<div class='called-details-div'><h5>Recent Deaths: " +
         item.NewDeaths +
         "<h5></div>";
-      formatedText +=
+        loggedText +=
         "<div class='called-details-div'><h5>New Confirmed Cases: " +
         item.NewConfirmed +
         "<h5></div>";
-      formatedText +=
+        loggedText +=
         "<div class='called-details-div'><h5>Recent Recovers: " +
         item.NewRecovered +
         "<h5></div>";
@@ -63,41 +57,30 @@ function formatSearchResults(jsonResults) {
     }
   });
 
-  $("#results").html(formatedText);
+  $("#results").html(loggedText);
   if (!flag) {
     setNotFoundMessages();
   }
 }
 
-// This functions handles sending off the search request as well as
-// error and success handling when the request calls back
+//CALLS BACK
 
 function executeSearch(event) {
-  // Variable to hold request
+  // HOLD REQUEST
   var request;
 
-  // Prevent default posting of form - put here to work in case of errors
+  // PREVENT DEFAULT IN CASE OF ERRORS
   event.preventDefault();
 
-  // Abort any pending request
   if (request) {
     request.abort();
   }
-  // setup some local variables
+  // LOCAL VARIABLES
   var $form = $(this);
-
-  // disable the inputs and buttons for the duration of the request.
-  setFormDisabledProps(true);
-
-  //$("#search-results-heading").text("Searching ...");
-  $("#results").text("");
-
-  // Send the request
 
   request = $.ajax({
     url: "https://api.covid19api.com/summary",
     type: "GET",
-    // data: { i: , q: $("#contains").val()}
   });
 
   pat = $("#details").val();
@@ -118,15 +101,9 @@ function executeSearch(event) {
     $("#results").text("");
   });
 
-  // Callback handler that will be called in any case
-
-  request.always(function () {
-    // Reenable the inputs
-    setFormDisabledProps(false);
-  });
 }
 
-// This function clears the search results and the heading "Search Results"
+// CLEAR SEARCHED RESULTS
 
 function resetResults() {
   $("#search-results-heading").text("");
@@ -135,8 +112,7 @@ function resetResults() {
   $("#result").text("");
 }
 
-// This function checks the user input fields for any unacceptable characters
-// and removes them if found
+//IF THE INPUT HAVE UNACEPTABLE CHARECTERS
 
 function validInputs() {
   var str = $("#details").val();
@@ -145,10 +121,10 @@ function validInputs() {
   $("#details").val(str);
 }
 
-// This function disables the text fields and the two buttons
+// DIABLE TEXT FIELD AND BUTTONS
 
 function setFormDisabledProps(statusToSet) {
-  document.getElementById("details").disabled = statusToSet;
+  document.getElementById("details")= statusToSet;
   document.getElementById("resetButton").disabled = statusToSet;
   document.getElementById("searchButton").disabled = statusToSet;
 }
@@ -156,6 +132,266 @@ function setNotFoundMessages() {
   $("#search-results-heading").text("Please provide a valid country name.");
   $("#results").text("");
 }
+
+//AUTOCOMPLETE FEATURE (JqueryUI)
+
+$ ( function() {
+  var availableCountries = [
+    "ALA Aland Islands",
+    "Afghanistan",
+    "Albania",
+    "Algeria",
+    "American Samoa",
+    "Andorra",
+    "Angola",
+    "Anguilla",
+    "Antarctica",
+    "Antigua and Barbuda",
+    "Argentina",
+    "Armenia",
+    "Aruba",
+    "Australia",
+    "Austria",
+    "Azerbaijan",
+    "Bahamas",
+    "Bahrain",
+    "Bangladesh",
+    "Barbados",
+    "Belarus",
+    "Belgium",
+    "Belize",
+    "Benin",
+    "Bermuda",
+    "Bhutan",
+    "Bolivia",
+    "Bosnia and Herzegovina",
+    "Botswana",
+    "Bouvet Island",
+    "Brazil",
+    "British Indian Ocean Territory",
+    "British Virgin Islands",
+    "Brunei Darussalam",
+    "Bulgaria",
+    "Burkina Faso",
+    "Burundi",
+    "Cambodia",
+    "Cameroon",
+    "Canada",
+    "Cape Verde",
+    "Cayman Islands",
+    "Central African Republic",
+    "Chad",
+    "Chile",
+    "China",
+    "Christmas Island",
+    "Cocos (Keeling) Islands",
+    "Colombia",
+    "Comoros",
+    "Congo (Brazzaville)",
+    "Congo (Kinshasa)",
+    "Cook Islands",
+    "Costa Rica",
+    "Croatia",
+    "Cuba",
+    "Cyprus",
+    "Czech Republic",
+    "Côte d'Ivoire",
+    "Denmark",
+    "Djibouti",
+    "Dominica",
+    "Dominican Republic",
+    "Ecuador",
+    "Egypt",
+    "El Salvador",
+    "Equatorial Guinea",
+    "Eritrea",
+    "Estonia",
+    "Ethiopia",
+    "Falkland Islands (Malvinas)",
+    "Faroe Islands",
+    "Fiji",
+    "Finland",
+    "France",
+    "French Guiana",
+    "French Polynesia",
+    "French Southern Territories",
+    "Gabon",
+    "Gambia",
+    "Georgia",
+    "Germany",
+    "Ghana",
+    "Gibraltar",
+    "Greece",
+    "Greenland",
+    "Grenada",
+    "Guadeloupe",
+    "Guam",
+    "Guatemala",
+    "Guernsey",
+    "Guinea",
+    "Guinea-Bissau",
+    "Guyana",
+    "Haiti",
+    "Heard and Mcdonald Islands",
+    "Holy See (Vatican City State)",
+    "Honduras",
+    "Hong Kong, SAR China",
+    "Hungary",
+    "Iceland",
+    "India",
+    "Indonesia",
+    "Iran, Islamic Republic of",
+    "Iraq",
+    "Ireland",
+    "Isle of Man",
+    "Israel",
+    "Italy",
+    "Jamaica",
+    "Japan",
+    "Jersey",
+    "Jordan",
+    "Kazakhstan",
+    "Kenya",
+    "Kiribati",
+    "Korea (North)",
+    "Korea (South)",
+    "Kuwait",
+    "Kyrgyzstan",
+    "Lao PDR",
+    "Latvia",
+    "Lebanon",
+    "Lesotho",
+    "Liberia",
+    "Libya",
+    "Liechtenstein",
+    "Lithuania",
+    "Luxembourg",
+    "Macao, SAR China",
+    "Macedonia, Republic of",
+    "Madagascar",
+    "Malawi",
+    "Malaysia",
+    "Maldives",
+    "Mali",
+    "Malta",
+    "Marshall Islands",
+    "Martinique",
+    "Mauritania",
+    "Mauritius",
+    "Mayotte",
+    "Mexico",
+    "Micronesia, Federated States of",
+    "Moldova",
+    "Monaco",
+    "Mongolia",
+    "Montenegro",
+    "Montserrat",
+    "Morocco",
+    "Mozambique",
+    "Myanmar",
+    "Namibia",
+    "Nauru",
+    "Nepal",
+    "Netherlands",
+    "Netherlands Antilles",
+    "New Caledonia",
+    "New Zealand",
+    "Nicaragua",
+    "Niger",
+    "Nigeria",
+    "Niue",
+    "Norfolk Island",
+    "Northern Mariana Islands",
+    "Norway",
+    "Oman",
+    "Pakistan",
+    "Palau",
+    "Palestinian Territory",
+    "Panama",
+    "Papua New Guinea",
+    "Paraguay",
+    "Peru",
+    "Philippines",
+    "Pitcairn",
+    "Poland",
+    "Portugal",
+    "Puerto Rico",
+    "Qatar",
+    "Republic of Kosovo",
+    "Romania",
+    "Russian Federation",
+    "Rwanda",
+    "Réunion",
+    "Saint Helena",
+    "Saint Kitts and Nevis",
+    "Saint Lucia",
+    "Saint Pierre and Miquelon",
+    "Saint Vincent and Grenadines",
+    "Saint-Barthélemy",
+    "Saint-Martin (French part)",
+    "Samoa",
+    "San Marino",
+    "Sao Tome and Principe",
+    "Saudi Arabia",
+    "Senegal",
+    "Serbia",
+    "Seychelles",
+    "Sierra Leone",
+    "Singapore",
+    "Slovakia",
+    "Slovenia",
+    "Solomon Islands",
+    "Somalia",
+    "South Africa",
+    "South Georgia and the South Sandwich Islands",
+    "South Sudan",
+    "Spain",
+    "Sri Lanka",
+    "Sudan",
+    "Suriname",
+    "Svalbard and Jan Mayen Islands",
+    "Swaziland",
+    "Sweden",
+    "Switzerland",
+    "Syrian Arab Republic (Syria)",
+    "Taiwan, Republic of China",
+    "Tajikistan",
+    "Tanzania, United Republic of",
+    "Thailand",
+    "Timor-Leste",
+    "Togo",
+    "Tokelau",
+    "Tonga",
+    "Trinidad and Tobago",
+    "Tunisia",
+    "Turkey",
+    "Turkmenistan",
+    "Turks and Caicos Islands",
+    "Tuvalu",
+    "US Minor Outlying Islands",
+    "Uganda",
+    "Ukraine",
+    "United Arab Emirates",
+    "United Kingdom",
+    "United States of America",
+    "Uruguay",
+    "Uzbekistan",
+    "Vanuatu",
+    "Venezuela (Bolivarian Republic)",
+    "Viet Nam",
+    "Virgin Islands, US",
+    "Wallis and Futuna Islands",
+    "Western Sahara",
+    "Yemen",
+    "Zambia",
+    "Zimbabwe",
+];
+$( "#details" ).autocomplete({
+  source: availableCountries
+});
+});
+
+
 //Currency Converter
 $(document).ready(function () {
   $("#searchButton").on("click", function () {
