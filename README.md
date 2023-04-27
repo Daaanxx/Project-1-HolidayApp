@@ -22,7 +22,7 @@ This application run in the browser, so no installation needed.
 5. Click "SEARCH" to get the latest information related to COVID, and the exchange rate.
 6. Would you like to look somewhere else? Click "RESET" and start again.
 
-(Add Screenshot)
+![Alt text](Assets/DEMO.png "Travel Safe screenshot")
 
 # Credits
 - Exchange Rate API: https://rapidapi.com/apininjas/api/currency-converter-by-api-ninjas/

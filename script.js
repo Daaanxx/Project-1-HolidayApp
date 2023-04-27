@@ -14,31 +14,35 @@ $(document).ready(function () {
   setInterval(moveToNextSlide, 8000);
 });
 
-/* //RECENT SEARCHES
- var searchHistory =[];
- function getItems() {
-    var shearchedCountries = JSON.parse(localStorage.getItem("searchHistory"));
-    if (searchedCountries != null) {
-        searchHistory = searchedCountries;
-};
+// //RECENT SEARCHES
+//  var searchHistory =[];
+//  function getItems() {
+//     var searchedCountries = JSON.parse(localStorage.getItem("searchHistory"));
+//     if (searchedCountries != null) {
+//         searchHistory = searchedCountries;
+// };
 
-// country list
-    for (I= 0; 1< searchHistory.lenght; i++) {
-      if (1 == 3) {
-          break;
-        }
+// // country list
+//     for (i = 0; i < searchHistory.length; i++) {
+//       if (1 == 3) {
+//           break;
+//         }
 
-// Bootstrap list https://getbootstrap.com/docs/4.0/components/list-group/
-    listButton = $("<a>").attr({
-        class:"list-group-item list-group-item-action",
-        href:"#"
-      });
-      //append search history
-      listButton.text(searchHistory[i]);
-      $(".list-group").append(listButton);
-    }
-}; */
+// // Bootstrap list https://getbootstrap.com/docs/4.0/components/list-group/
+//     listButton = $("<a>").attr({
+//         class:"list-group-item list-group-item-action",
+//         href:"#"
+//       });
+//       //append search history
+//       listButton.text(searchHistory[i]);
+//       $(".list-group").append(listButton);
+//     }
+// };
 
+// function getData() {
+//   var queryURL = "https://api.covid19api.com/countries" + country 
+  
+// }
 //CALL FUNCTION
 $(document).ready(function () {
   // add an event listener (executeSearch) to the form
@@ -460,3 +464,27 @@ $(document).ready(function () {
     });
   });
 });
+
+// $("#searchButton").click(function() {
+//   country = $("#details").val();
+//   getData();
+//   var checkArray = searchHistory.includes(country);
+//   if (checkArray == true) {
+//       return
+//   }
+//   else {
+//       searchHistory.push(country);
+//       localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+//       var listButton = $("<a>").attr({
+//           class: "list-group-item list-group-item-action",
+//           href: "#"
+//       });
+//       listButton.text(country);
+//       $(".list-group").append(listButton);
+//   };
+// });
+// // event listener for search history
+// $(".list-group-item").click(function() {
+//   country = $(this).text();
+//   getData();
+// });

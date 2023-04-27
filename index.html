@@ -104,13 +104,20 @@
        
          <div class="card info-1" >
              <label for="details tags" class="question">Destination Country:</label>  
+             <input class="question" id="details"
+           type="text" name="details"
+           placeholder="e.g. United Kingdom"
+           onChange="validInputs()"/>
              <label for="details" class="question">Convert from:</label> 
+             <input class="answer" id="from" placeholder="e.g. USD" /> 
              <label for="details" class="question">Convert to:</label>
+             <input class="answer" id="to" placeholder="e.g. EUR" />
              <label for="details" class="question">Amount:</label> 
+             <input class="answer" id="amount" placeholder="e.g.100" />
          </div>
            
          
-         <div class="card info-2" >
+         <!-- <div class="card info-2" >
            
            <input class="textfield question" id="details"
            type="text" name="details"
@@ -119,7 +126,7 @@
            <input class="answer" id="from" placeholder="e.g. USD" /> 
            <input class="answer" id="to" placeholder="e.g. EUR" />
            <input class="answer" id="amount" placeholder="e.g.100" />
-           </div>
+           </div> -->
          
      </div>
         
@@ -136,9 +143,9 @@
        <div class="card-deck">
          <div class="card result">
           
-           <img src="Assets/Covid-Results.jpg" class="card-img-top" alt="a globe hold by two hands wearing gloves" >
+           <img src="Assets/covid-picture.jpg" class="card-img-top" alt="a globe hold by two hands wearing gloves" >
            <div class="card-body">
-             <h5 class="card-title">Covid Info</h5>
+             <h5 class="card-title card-des">Covid Info</h5>
              <p class="card-text">   <div class="section-subheader" id="search-results-heading"></div>
                <div class="results-div" id="results"></div></p>
              
@@ -148,7 +155,7 @@
          <div class="card result" >
            <img src="Assets/Currency.jpg" class="card-img-top" alt="a globe hold by two hands wearing gloves" >
            <div class="card-body">
-             <h5 class="card-title">Your Budget</h5>
+             <h5 class="card-title card-des">Budget</h5>
              <p class="card-text"><h3><span id="result"></span></h3></p>
            </div>
            </div>
@@ -159,8 +166,9 @@
        </div>
        </div>
       </section>
-    <!--List:Recent Searches
-      <aside class=“list-group” id=“history></aside>-->  
+    <!--List:Recent Searches -->
+    <aside class=“list-group” id=“history>
+      <h5>List:Recent Searches</h5>
     </div>
     <!-- EXTERNAL LINKS -->
     <!-- jQuery  -->

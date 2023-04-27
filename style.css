@@ -2,39 +2,30 @@ body {
   background-color: #197b9a;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 .card {
   width: 60%;
   margin: 0 auto;
   background-color: #f9faf5;
 }
-
 /* SECTION TOP/ CAROUSEL */
-
 .section-top {
   margin-bottom: 50px;
 }
-
 /* TOP TEXT */
-
 .tittle-top {
   font-size: 3rem;
 }
-
 /* LOGO */
-
 .logo {
   width: 40%;
   height: 40%;
 }
-
 /* SEARCH INPUT */
 .box1 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .text-info-top {
   display: flex;
   flex-direction: column;
@@ -46,8 +37,8 @@ body {
 .info-2 {
   margin-top: 30px;
   padding: 10px;
+  border: none;
 }
-
 .btn-position {
   display: flex;
   justify-content: center;
@@ -61,29 +52,41 @@ body {
   width: 10rem;
   background-color: #44c1e7;
 }
-
 .question {
   font-size: 2rem;
+  margin-top: 15px;
+  border-radius: 12px;
 }
 .answer {
   font-size: 2rem;
   padding: 2px;
+  border-radius: 12px;
 }
 /* CARDS AKA BOX2 */
-
+.result {
+  border: none;
+}
 .box2 {
   width: 60%;
   margin: 50px auto;
 }
-
+.card-deck {
+  gap: 2rem;
+}
+.card-img-top {
+  border-radius: 15px 50px 30px;
+}
+.card-des {
+  text-decoration: underline;
+}
+h6
 /* SECTION BTM */
-
 .section-midd {
   margin-bottom: 100px;
 }
 /* MEDIAQ  */
 /* 750 */
-@media (max-width: 750px) {
+@media (max-width: 780px) {
   .question {
     font-size: 1rem;
   }
@@ -91,8 +94,15 @@ body {
     font-size: 1rem;
     padding: 2px;
   }
+  .card-title {
+    font-size: 50%;
+  }
 }
-
+@media (max-width: 860px) {
+  .card-body {
+    padding: 0;
+  }
+}
 @media (max-width: 1230px) {
   .tittle-top {
     font-size: 2rem;
